@@ -1,0 +1,30 @@
+.link {
+    color: blue;
+}
+
+.header{
+    padding: 1rem 0 3rem;
+}
+
+.title{
+    color: #000000;
+    font-size: 3rem;
+    text-decoration: none;
+}
+
+.navlist {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+}
+
+.navitem {
+    color: #999999;
+    font-size: .9rem;
+    margin-right: 1.3rem;
+    text-decoration: none;
+}
+
+.activeNavItem {
+    color: #333333
+}
