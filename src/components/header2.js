@@ -23,7 +23,7 @@ const Header2 = () => {
             <ul className={headerStyles.navlist}>
                 <li>
                     <Link className={headerStyles.navitem} activeClassName={headerStyles.activeNavItem} to='/ContactMe'>
-                        Contact 
+                        Baasdas 
                     </Link>
                 </li>
                 <li>

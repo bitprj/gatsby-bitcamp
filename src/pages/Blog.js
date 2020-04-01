@@ -10,19 +10,19 @@ const RecipeBook = () => {
             <ol>
                 <h2>Recipes</h2>
                 <li className={blogStyles.post}>
-                    <Link to={`/blog/Pasta`}>
+                    <Link to={`/Pasta`}>
                         <h2>Pasta</h2>
                         <p>Time to Cook: 5</p>
                     </Link>
                 </li>
                 <li className={blogStyles.post}>
-                    <Link to={`/blog/Rice`}>
+                    <Link to={`/Rice`}>
                         <h2>Rice</h2>
                         <p>Time to Cook: 5</p>
                     </Link>
                 </li>
                 <li className={blogStyles.post}>
-                    <Link to={`/blog/Ramen`}>
+                    <Link to={`/Ramen`}>
                         <h2>Ramen</h2>
                         <p>Time to Cook: 5</p>
                     </Link>
