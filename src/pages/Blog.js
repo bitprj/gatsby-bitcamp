@@ -1,28 +1,41 @@
 import React from 'react'
-// import layout2Styles from '../components/layout2.module.scss'
+import layout2Styles from '../components/layout2.module.scss'
 import Layout2 from '../components/layout2'
 import blogStyles from './blog.module.scss'
 import { Link, graphql, useStaticQuery} from "gatsby"
-
-const HomePage =  ({data}) => {
+const RecipeBook = () => {
     return (
-        <h2>{data.recipe.recipe2.timeToCook}</h2> ,
-        <p>{data.recipe.recipe2.step1}</p> 
+
+        <Layout2>
+            <ol>
+                <h2>Recipes</h2>
+                <li className={blogStyles.post}>
+                    <Link to={`/blog/Pasta`}>
+                        <h2>Pasta</h2>
+                        <p>Time to Cook: 5</p>
+                    </Link>
+                </li>
+                <li className={blogStyles.post}>
+                    <Link to={`/blog/Rice`}>
+                        <h2>Rice</h2>
+                        <p>Time to Cook: 5</p>
+                    </Link>
+                </li>
+                <li className={blogStyles.post}>
+                    <Link to={`/blog/Ramen`}>
+                        <h2>Ramen</h2>
+                        <p>Time to Cook: 5</p>
+                    </Link>
+                </li>
+            </ol>
+
+
+        </Layout2>
+
     )
 }
-export const query = graphql`
-    query HomePageQuery {
-        recipe{
-            recipe2{
-                timeToCook
-                step1
-            }
-        }
-    }
-`
-
-
-export default HomePage
+export default RecipeBook
+//export default HomePage
 // const BlogPage = () =>{
 //     const response = (graphql`
 //     query {
@@ -62,4 +75,18 @@ export default HomePage
 //     )
 // }
 // export default BlogPage
+
+
+// <ol>
+//                 <p> Ingredients: {data.recipe.recipe2.ingredients}</p>
+//                 <p> Instructions:
+//                      <ol>
+//                         {data.recipe.recipe2.instructions.step1}
+//                         {data.recipe.recipe2.instructions.step2}
+//                         {data.recipe.recipe2.instructions.step3}
+//                         {data.recipe.recipe2.instructions.step4}
+//                         {data.recipe.recipe2.instructions.step5}
+//                     </ol>
+//                 </p>
+//             </ol>
 

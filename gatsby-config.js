@@ -2,6 +2,8 @@
 require('dotenv').config({
   path: `.env.production`,
 });
+
+
 const blogQuery = `{
   recipe{
     recipe2s {
@@ -14,8 +16,7 @@ const queries = [
     
   },
 ];
-console.log(blogQuery)
-console.log("blahblahblah")
+
 const axios = require('axios');
 const getAuthorizationToken = () => {
   return axios
@@ -35,9 +36,9 @@ const getAuthorizationToken = () => {
 };
 module.exports = {
   siteMetadata: {
-    title: `Full-Stack Bootcamp!`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `Blah blah2`,
+    title: `Cookbook`,
+    description: `This is my Cookbook`,
+    author: `Made by ______`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -63,7 +64,7 @@ module.exports = {
             Authorization: await getAuthorizationToken(),
           }
         },
-        refetchInterval: 60,
+        refetchInterval: 30,
       },
     },
     {

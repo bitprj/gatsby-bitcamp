@@ -5,6 +5,7 @@ import { InstantSearch, SearchBox, Hits, Highlight} from 'react-instantsearch-do
 import { Link, graphql } from "gatsby"
 import PostPreview from "../components/post-preview"
 import Layout from '../components/Layout3'
+import Header2 from '../components/Header2'
 
 
 
@@ -17,6 +18,7 @@ const BlogIndex = ({ data, location }) => {
  
   return (
     <Layout location={location} title={siteTitle}>
+
       <InstantSearch searchClient={searchClient} indexName="Recipe">
         <SearchBox />
         <Hits hitComponent={PostPreview}/>
@@ -38,14 +40,8 @@ export const pageQuery = graphql`
       siteMetadata {
         title
       }
-    }
-    recipe{
-      recipe2{
-        timeToCook
-      }
-    }
-    
   }
+}
 `
 const AboutPage = () =>{
     return(

@@ -1,15 +1,12 @@
-.link {
-    color: blue;
-}
-
-.header{
+.header {
     padding: 1rem 0 3rem;
 }
 
-.title{
+.title {
     color: #000000;
     font-size: 3rem;
     text-decoration: none;
+    box-shadow: none;
 }
 
 .navlist {
@@ -23,8 +20,13 @@
     font-size: .9rem;
     margin-right: 1.3rem;
     text-decoration: none;
+    box-shadow: none;
 }
 
-.activeNavItem {
-    color: #333333
+.navitem:hover {
+    color: #666666;
+}
+
+.activenavitem {
+    color: #333333;
 }

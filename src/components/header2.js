@@ -19,6 +19,7 @@ const Header2 = () => {
                     {data.site.siteMetadata.title}
                 </Link>
             </h1>
+            <nav>
             <ul className={headerStyles.navlist}>
                 <li>
                     <Link className={headerStyles.navitem} activeClassName={headerStyles.activeNavItem} to='/ContactMe'>
@@ -41,7 +42,7 @@ const Header2 = () => {
                     </Link>
                 </li>
             </ul>
-
+            </nav>
         </header>
         )
 }
