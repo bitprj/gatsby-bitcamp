@@ -13,13 +13,13 @@ const searchClient = algoliasearch(process.env.GATSBY_ALGOLIA_APP_ID, process.en
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  //const posts = data.allMarkdownRemark.edges
+  //const posts = data.allTwitterSearchTweetsGatsbyHashtag.nodes
 
  
   return (
     <Layout location={location} title={siteTitle}>
 
-      <InstantSearch searchClient={searchClient} indexName="Recipe">
+      <InstantSearch searchClient={searchClient} indexName="Blog">
         <SearchBox />
         <Hits hitComponent={PostPreview}/>
         

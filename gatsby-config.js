@@ -2,18 +2,39 @@
 require('dotenv').config({
   path: `.env.production`,
 });
-
-
 const blogQuery = `{
-  recipe{
-    recipe2s {
-      ingredients
+  allMarkdownRemark{
+    nodes {
+      frontmatter {
+        title 
+        date
+        description
+      }
+      fields{
+        slug
+      }
+      excerpt
+      html
+    }
+  }
+}`;
+
+const tweetQuery = `{
+  allTwitterSearchTweetsGatsbyHashtag (limit: 10){
+    nodes {
+      full_text
+      id
+      retweeted_status{
+        retweet_count
+      }
+    }
+  }
 }`;
 
 const queries = [
   {
-    query: blogQuery,
-    
+    query: tweetQuery,
+    transformer: ({data}) => data.allTwitterSearchTweetsGatsbyHashtag.nodes
   },
 ];
 
@@ -84,7 +105,25 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    
+    {
+      resolve: `gatsby-source-twitter`,
+      options: {
+        credentials: {
+          consumer_key: process.env.TWITTER_CONSUMER_KEY,
+          consumer_secret: process.env.TWITTER_CONSUMER_SECRET, 
+          bearer_token: process.env.TWITTER_BEARER_TOKEN,
+        },
+        queries: {
+          gatsbyHashtag: {
+            endpoint: "search/tweets",
+            params: {
+              q: "#gatsbyjs",
+              tweet_mode: "extended",
+            },
+          },
+        },
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -95,6 +134,17 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+      
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME,
+        queries,
+        chunkSize: 1000, // default: 1000
       },
     },
     
