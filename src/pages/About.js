@@ -12,15 +12,15 @@ import Header2 from '../components/Header2'
 const searchClient = algoliasearch(process.env.GATSBY_ALGOLIA_APP_ID, process.env.GATSBY_ALGOLIA_SEARCH_KEY,);
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+  //const siteTitle = data.site.siteMetadata.title
   //const posts = data.allTwitterSearchTweetsGatsbyHashtag.nodes
 
  
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout2>
 
       <InstantSearch searchClient={searchClient} indexName="Blog">
-        <SearchBox />
+        <SearchBox/>
         <Hits hitComponent={PostPreview}/>
         
       </InstantSearch>
@@ -28,34 +28,9 @@ const BlogIndex = ({ data, location }) => {
       
      
       
-    </Layout>
+    </Layout2>
   )
 }
 
 export default BlogIndex
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-  }
-}
-`
-const AboutPage = () =>{
-    return(
-        <div>
-            <Layout2>
-            <hi>About me</hi>
-            <p>I like cards</p> 
-            <p> 
-                Contact me <a href="https://google.com" target ="_blank"> Here</a>
-            </p>
-            </Layout2>
-        </div>
-
-
-    )
-}
 

@@ -1,24 +1,20 @@
 import React from 'react'
 import { Link } from "gatsby"
-import { rhythm } from "../utils2/typography"
+import { rhythm } from "../utils/typography"
 import { Highlight } from 'react-instantsearch-dom'
-
 const PostPreview = ( {hit}) => {
-    const title = hit.frontmatter.title 
+    const text = hit.full_text
     return (
     (
         <div >
           <header>
-            {/* <h3
+            <h3
               style={{
                 marginBottom: rhythm(1 / 4),
               }}
-            >
-              { <Link style={{ boxShadow: `none` }} to={hit.fields.slug}>
-                {title}
-              </Link> }
-            </h3> */}
-            <small>{new Date(hit.frontmatter.date). toLocaleDateString()}</small>
+            >   {text}
+            </h3>
+            <small>{new Date(hit.created_at).toLocaleDateString()}</small>
           </header>
           <section>
             {/* <p
@@ -28,7 +24,7 @@ const PostPreview = ( {hit}) => {
             /> */}
             <p>
                 <Highlight hit = {hit}
-                attribute="excerpt" 
+                attribute="full_text" 
                 tagName="mark"/>
             </p>
           </section>

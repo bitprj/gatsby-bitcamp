@@ -2,25 +2,17 @@
 import React from 'react'
 import Layout2 from '../components/layout2'
 import {graphql} from 'gatsby'
-//import {documentToReactComponents} from '@contentful/rich-text-renderer'
 
 
-
-
-
-
-
-
-/*
 export const query = graphql`
-    query($slug: String!){
-          markdownRemark(fields : {slug : {eq: $slug}}) 
-        {
-            frontmatter{
-              title
-              date
+    query ($id : String!){
+        twitterSearchTweetsGatsbyHashtag(id : {eq: $id}) {
+            id
+            full_text
+            retweet_count
+            user {
+                name
             }
-            html
         }
     }
 `
@@ -28,9 +20,9 @@ export const query = graphql`
 const blog = (props) => {
     return (
         <Layout2>
-            <h1>{props.data.markdownRemark.frontmatter.title}</h1>
-            <p>{props.data.markdownRemark.frontmatter.date}</p>
-            <div dangerouslySetInnerHTML={{__html: props.data.markdownRemark.html}}></div>
+            <h1>{props.data.twitterSearchTweetsGatsbyHashtag.user.name}</h1>
+            <p>{props.data.twitterSearchTweetsGatsbyHashtag.full_text}</p>
+            <p>{props.data.twitterSearchTweetsGatsbyHashtag.retweet_count}</p>
         </Layout2> 
 
     )
@@ -38,4 +30,3 @@ const blog = (props) => {
 
 export default blog
 
-*/

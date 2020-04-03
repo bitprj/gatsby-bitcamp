@@ -1,40 +1,33 @@
 
-// const path = require('path')
+const path = require('path')
 
 
 
-// exports.createPages = async ({graphql, actions}) => {
-//     const {createPage} = actions
-//     const blogTemplate = path.resolve('./src/templates/blog.js')
-//     const data = await graphql(`
-//         query {
-//             recipe{
-//                 recipe2s {
-//                     ingredients
-//                     timeToCook
-//                     title
-//                     edges {
+exports.createPages = async ({graphql, actions}) => {
+    const {createPage} = actions
+    const blogTemplate = path.resolve('./src/templates/blog.js')
+    const res = await graphql(`
+        query {
+            allTwitterSearchTweetsGatsbyHashtag{
+                edges {
+                    node{
+                        id
+                    }
+                }
+            }
+        }
+    `)
 
-//                         slug
-//                     }
-//                 }
-//             }
-//         }
-//     `)
-    
-//     console.log(data.data.recipe.recipe2s)
-//     if (data.data.recipe.recipe2s !== null)
-//     data.data.recipe.recipe2s.forEach((ingredients)=>{
-//         console.log(data.data.recipe.recipe2s.title)
-//         createPage({
-//             component: blogTemplate,
-//             path: `/blog/${data.data.recipe.recipe2s.title}`,
-//             context: {
-//                 slug: data.data.recipe.recipe2s.title
-//             }
-//         })
-//     })
-// }
+    res.data.allTwitterSearchTweetsGatsbyHashtag.edges.forEach((edge)=>{
+        createPage({
+            component: blogTemplate,
+            path: `/blog/${edge.node.id}`,
+            context: {
+                id: edge.node.id
+            }
+        })
+    })
+}
 
 
 
