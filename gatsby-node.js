@@ -21,7 +21,7 @@ exports.createPages = async ({graphql, actions}) => {
     res.data.allTwitterSearchTweetsGatsbyHashtag.edges.forEach((edge)=>{
         createPage({
             component: blogTemplate,
-            path: `/twitter/${edge.node.id}`,
+            path: `/tweet/${edge.node.id}`,
             context: {
                 id: edge.node.id
             }
