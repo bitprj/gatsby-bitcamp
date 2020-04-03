@@ -4,6 +4,7 @@ import { rhythm } from "../utils/typography"
 import { Highlight } from 'react-instantsearch-dom'
 const PostPreview = ( {hit}) => {
     const text = hit.full_text
+    const id = hit.id
     return (
     (
         <div >
@@ -12,8 +13,10 @@ const PostPreview = ( {hit}) => {
               style={{
                 marginBottom: rhythm(1 / 4),
               }}
-            >   {text}
+            >   
+            <Link style={{ boxShadow: `none` }} to={`/tweet/${hit.id}`}>{text}</Link>
             </h3>
+            
             <small>{new Date(hit.created_at).toLocaleDateString()}</small>
           </header>
           <section>
