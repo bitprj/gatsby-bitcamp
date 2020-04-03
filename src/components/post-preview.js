@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'React'
 import { Link } from "gatsby"
 import { rhythm } from "../utils/typography"
 import { Highlight } from 'react-instantsearch-dom'
