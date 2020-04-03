@@ -10,6 +10,7 @@ export const query = graphql`
             id
             full_text
             retweet_count
+            created_at
             user {
                 name
             }
@@ -22,7 +23,8 @@ const blog = (props) => {
         <Layout2>
             <h1>{props.data.twitterSearchTweetsGatsbyHashtag.user.name}</h1>
             <p>{props.data.twitterSearchTweetsGatsbyHashtag.full_text}</p>
-            <p>{props.data.twitterSearchTweetsGatsbyHashtag.retweet_count}</p>
+            <p> Retweet count: {props.data.twitterSearchTweetsGatsbyHashtag.retweet_count}</p>
+            <p>{props.data.twitterSearchTweetsGatsbyHashtag.created_at}</p>
         </Layout2> 
 
     )
