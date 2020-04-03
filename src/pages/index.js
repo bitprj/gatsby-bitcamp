@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import Layout2 from "../components/layout2"
+import Layout2 from "../components/Layout2"
 
 import SEO from "../components/seo"
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import layoutStyles from '../components/layout2.module.scss'
-import Layout2 from '../components/layout2'
+import Layout2 from '../components/Layout2'
 import blogStyles from './blog.module.scss'
 import { Link, graphql, useStaticQuery} from "gatsby"
 

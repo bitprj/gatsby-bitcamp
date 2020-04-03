@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout2 from '../components/layout2'
+import Layout2 from '../components/Layout2'
 import blogStyles from './blog.module.scss'
 import { graphql, useStaticQuery} from "gatsby"
 import layoutStyles from '../components/layout2.module.scss'
