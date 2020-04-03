@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout2 from '../components/layout2'
-import blogStyles from './blog.module.scss'
+//import blogStyles from './blog.module.scss'
 import { graphql, useStaticQuery} from "gatsby"
 import layoutStyles from '../components/layout2.module.scss'
 
@@ -24,18 +24,20 @@ export default () => {
         `)
     return (
         <Layout2>
-            <h1 className={layoutStyles.whatever} >{data.recipe.recipe3.title}</h1>
-             <ol>
-                 <p> Ingredients: {data.recipe.recipe3.ingredients}</p>
-                 <p> Instructions:
-                      <li><p>{data.recipe.recipe3.step1}</p></li>
-                      <li><p>{data.recipe.recipe3.step2}</p></li>
-                      <li><p>{data.recipe.recipe3.step3}</p></li>
-                      <li><p>{data.recipe.recipe3.step4}</p></li>
-                      <li><p>{data.recipe.recipe3.step5}</p></li>
-                 </p>
-             </ol>
-
+            <div className={layoutStyles.recipe}>
+                <h1 className={layoutStyles.recipetitle}>{data.recipe.recipe3.title}</h1>                    
+                <h5 className={layoutStyles.recipetime}>Cook time: {data.recipe.recipe3.timeToCook} minutes</h5>
+                <h4 className={layoutStyles.recipetitle2}>Ingredients</h4>
+                <p>{data.recipe.recipe3.ingredients}</p>                    
+                <h4 className={layoutStyles.recipetitle2}>Instructions</h4>
+                <ol>
+                    <li><p>{data.recipe.recipe3.step1}</p></li>
+                    <li><p>{data.recipe.recipe3.step2}</p></li>
+                    <li><p>{data.recipe.recipe3.step3}</p></li>
+                    <li><p>{data.recipe.recipe3.step4}</p></li>
+                    <li><p>{data.recipe.recipe3.step5}</p></li>                        
+                </ol>
+            </div>
         </Layout2>
     )
 }
