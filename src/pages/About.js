@@ -2,10 +2,7 @@ import React from 'react'
 import Layout2 from '../components/Layout2'
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, Highlight} from 'react-instantsearch-dom';
-import { Link, graphql } from "gatsby"
 import PostPreview from "../components/post-preview"
-import Layout from '../components/Layout3'
-import Header2 from '../components/Header2'
 
 
 
