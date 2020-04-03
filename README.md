@@ -1,3 +1,5 @@
+NEEDS A .ENV.PRODUTION FILE THAT CONTAINS API KEYS
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
