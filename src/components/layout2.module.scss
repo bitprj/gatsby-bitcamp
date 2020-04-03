@@ -14,9 +14,24 @@
 .bloglink{
     text-decoration:none;
     color: #000000;
-
 }
 
-.whatever {
-    color: red;
+.recipetitle {    
+    font-weight: 700;
+}
+
+.recipetitle2 {
+    text-decoration: underline rgb(68, 68, 68);
+}
+
+.recipetime {
+    font-style: italic;
+    font-size: smaller;
+    line-height: 0rem;
+}
+
+.recipe {
+    background-color: #ffe9d5;
+    padding: 1rem;
+    line-height: 1rem;
 }
