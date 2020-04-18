@@ -20,7 +20,7 @@ const blogQuery = `{
 }`;
 
 const tweetQuery = `{
-  allTwitterSearchTweetsGatsbyHashtag (limit: 10){
+  allTwitterSearchTweetsGatsbyHashtag (limit: 15){
     nodes {
       full_text
       id
@@ -117,7 +117,7 @@ module.exports = {
           gatsbyHashtag: {
             endpoint: "search/tweets",
             params: {
-              q: "#gatsbyjs",
+              q: "#flattenthecurve",
               tweet_mode: "extended",
             },
           },
