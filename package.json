@@ -28,7 +28,7 @@
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-source-graphql": "^2.3.0",
     "gatsby-source-twitter": "^3.2.1",
-    "gatsby-transformer-remark": "^2.6.53",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.3.13",
     "glamor-inline": "^1.0.5",
     "lodash": "^4.17.15",
